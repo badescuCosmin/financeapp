@@ -1,3 +1,5 @@
+import { ClientComponent } from "../clientC";
+
 import { fetchWithCustomHeaders } from "../libs/headers";
 
 async function Dashboard() {
@@ -12,7 +14,12 @@ async function Dashboard() {
     console.error(er);
   }
 
-  return <p>{data?.meta?.processedTime} verce</p>;
+  return (
+    <div>
+      <p>{data?.meta?.processedTime}</p>
+      <ClientComponent />
+    </div>
+  );
 }
 
 export default Dashboard;
