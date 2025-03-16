@@ -1,5 +1,5 @@
 import { fetchWithCustomHeaders } from "../libs/headers";
-import { SomeClientComponent } from "../clientComponent";
+
 async function Dashboard() {
   let data;
   try {
@@ -15,7 +15,7 @@ async function Dashboard() {
   return (
     <div>
       {data?.meta?.processedTime}
-      <SomeClientComponent />
+      <div>SOme new test</div>
     </div>
   );
 }
