@@ -9,7 +9,7 @@ async function Dashboard() {
 
   console.log(data, "data");
 
-  return <p>{data.meta.processedTime}</p>;
+  return <p>{data?.meta?.processedTime}</p>;
 }
 
 export default Dashboard;
