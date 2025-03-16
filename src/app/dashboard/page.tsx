@@ -12,12 +12,7 @@ async function Dashboard() {
     console.error(er);
   }
 
-  return (
-    <div>
-      {data?.meta?.processedTime}
-      <div>SOme new test</div>
-    </div>
-  );
+  return <p>{data?.meta?.processedTime}</p>;
 }
 
 export default Dashboard;
