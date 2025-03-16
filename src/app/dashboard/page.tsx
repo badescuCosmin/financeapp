@@ -12,7 +12,7 @@ async function Dashboard() {
     console.error(er);
   }
 
-  return <p>{data?.meta?.processedTime}</p>;
+  return <p>{data?.meta?.processedTime} verce</p>;
 }
 
 export default Dashboard;
