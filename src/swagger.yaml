@@ -1,0 +1,148 @@
+swagger: "2.0"
+info:
+  title: Finance API
+  description: API for retrieving historical stock data
+  version: "1.0.0"
+paths:
+  /api/users:
+    get:
+      summary: Retrieve historical stock data
+      parameters:
+        - in: query
+          name: symbol
+          schema:
+            type: string
+          description: Stock symbol to retrieve data for
+        - in: query
+          name: interval
+          schema:
+            type: string
+          description: Interval for the stock data (e.g., 1mo, 1d)
+        - in: query
+          name: diffandsplits
+          schema:
+            type: string
+          description: Whether to include dividends and splits
+      responses:
+        200:
+          description: A JSON object containing historical stock data
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  meta:
+                    type: object
+                    properties:
+                      processedTime:
+                        type: string
+                        format: date-time
+                        description: The time the response was processed
+                      currency:
+                        type: string
+                        description: Currency code (e.g., EUR)
+                      symbol:
+                        type: string
+                        description: Stock ticker symbol
+                      exchangeName:
+                        type: string
+                        description: Short name of the exchange
+                      fullExchangeName:
+                        type: string
+                        description: Full name of the exchange
+                      instrumentType:
+                        type: string
+                        description: Type of financial instrument
+                      firstTradeDate:
+                        type: integer
+                        description: Unix timestamp of the first trade date
+                      regularMarketTime:
+                        type: integer
+                        description: Regular market time in Unix timestamp
+                      hasPrePostMarketData:
+                        type: boolean
+                        description: Indicates if pre/post-market data is available
+                      gmtoffset:
+                        type: integer
+                        description: GMT offset in seconds
+                      timezone:
+                        type: string
+                        description: Timezone of the data
+                      exchangeTimezoneName:
+                        type: string
+                        description: Name of the exchange's timezone
+                      regularMarketPrice:
+                        type: number
+                        description: Regular market price of the stock
+                      fiftyTwoWeekHigh:
+                        type: number
+                        description: 52-week high price
+                      fiftyTwoWeekLow:
+                        type: number
+                        description: 52-week low price
+                      regularMarketDayHigh:
+                        type: number
+                        description: Regular market day's high price
+                      regularMarketDayLow:
+                        type: number
+                        description: Regular market day's low price
+                      regularMarketVolume:
+                        type: integer
+                        description: Regular market volume
+                      longName:
+                        type: string
+                        description: Full name of the instrument
+                      shortName:
+                        type: string
+                        description: Short name of the instrument
+                      chartPreviousClose:
+                        type: number
+                        description: Previous close price on the chart
+                      priceHint:
+                        type: integer
+                        description: Price hint
+                      dataGranularity:
+                        type: string
+                        description: Data granularity (e.g., 1mo)
+                      range:
+                        type: string
+                        description: Data range
+                      version:
+                        type: string
+                        description: API version
+                      status:
+                        type: integer
+                        description: Response status code
+                      copywrite:
+                        type: string
+                        description: Copywrite link
+                  body:
+                    type: object
+                    additionalProperties:
+                      type: object
+                      properties:
+                        date:
+                          type: string
+                          format: date
+                          description: Date in DD-MM-YYYY format
+                        date_utc:
+                          type: integer
+                          description: Date in Unix timestamp
+                        open:
+                          type: number
+                          description: Opening price of the stock
+                        high:
+                          type: number
+                          description: Highest price of the stock
+                        low:
+                          type: number
+                          description: Lowest price of the stock
+                        close:
+                          type: number
+                          description: Closing price of the stock
+                        volume:
+                          type: integer
+                          description: Volume of stocks traded
+                        adjclose:
+                          type: number
+                          description: Adjusted close price of the stock
