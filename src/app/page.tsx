@@ -1,3 +1,4 @@
+"use client";
 import Chart from "./components/chart";
 import { mockData } from "./libs/mockData";
 
