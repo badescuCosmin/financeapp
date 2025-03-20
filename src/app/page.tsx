@@ -17,7 +17,6 @@ export default async function Home() {
 
   return (
     <div>
-      {JSON.stringify(response.meta)}
       <Chart data={mapData} />
     </div>
   );
