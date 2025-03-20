@@ -10,7 +10,6 @@ export const GET = async (request: Request) => {
     `https://yahoo-finance15.p.rapidapi.com/api/v1/markets/stock/history?symbol=${symbol}&interval=${interval}&diffandsplits=${diffAndSplits}`
   );
   const data = await response.json();
-
   return new Response(JSON.stringify(data), {
     status: 200,
     headers: { "Content-Type": "application/json" },
