@@ -1,23 +1,19 @@
 "use client";
 
 import { LineChart } from "@mui/x-charts/LineChart";
+import { Response } from "../page";
 
-interface IData {
-  dateUTC: string;
-  close: number;
-}
-
-function Chart({ data }: { data: IData[] }) {
-  const xAFormatted = (date: any) => new Date(date).toLocaleDateString("en-GB");
+function Chart({ data }: { data: Response[] }) {
+  const xAFormatted = (date: number) =>
+    new Date(date).toLocaleDateString("en-GB");
 
   return (
     <LineChart
-      dataset={[...data] as any}
+      dataset={data}
       xAxis={[
         {
-          dataKey: "dateUTC",
+          dataKey: "date_utc",
           valueFormatter: (value) => xAFormatted(Number(`${value}000`)),
-
           hideTooltip: true,
         },
       ]}
