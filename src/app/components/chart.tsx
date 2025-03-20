@@ -14,7 +14,6 @@ function Chart({ data }: { data: Response[] }) {
         {
           dataKey: "date_utc",
           valueFormatter: (value) => xAFormatted(Number(`${value}000`)),
-          hideTooltip: true,
         },
       ]}
       series={[
