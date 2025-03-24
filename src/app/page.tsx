@@ -54,9 +54,5 @@ export default async function Home() {
     },
   ];
 
-  return (
-    <div>
-      <Chart data={mapData} />
-    </div>
-  );
+  return <Chart data={mapData} />;
 }
