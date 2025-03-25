@@ -38,6 +38,7 @@ export const mockData = {
       close: 71.55,
       volume: 430,
       adjclose: 71.55,
+      name: "as",
     },
     "1564610400": {
       date: "31-07-2019",
@@ -48,6 +49,7 @@ export const mockData = {
       close: 70.24,
       volume: 34436,
       adjclose: 70.24,
+      name: "as",
     },
     "1567288800": {
       date: "31-08-2019",
@@ -58,6 +60,7 @@ export const mockData = {
       close: 72.57,
       volume: 117086,
       adjclose: 72.57,
+      name: "as",
     },
     "1569880800": {
       date: "30-09-2019",
@@ -68,6 +71,7 @@ export const mockData = {
       close: 72.63,
       volume: 60691,
       adjclose: 72.63,
+      name: "as",
     },
     "1572562800": {
       date: "31-10-2019",
